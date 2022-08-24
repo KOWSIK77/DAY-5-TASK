@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+//ANON FUNCTION
+
+var name = function(a1,a2){
+    var x = a1.concat(a2);
+    //console.log(x)
+  x.sort(function (a,b) {
+    return a - b;
+  });
+  var len = x.length;
+  
+  return len%2 === 0 ? (x[Math.floor(len/2)-1] + x[Math.ceil(len/2)])/2 : x[Math.floor(len/2)];
+  
+
+}
+
+let a = [1,2,3,4,5];
+let b = [6,7,8,9,10];
+console.log(name(a,b));
+
+
+//IIFE FUNCTION
+
+
+(function(a1, a2){
+    let a = [1,2,3,4,5];
+let b = [6,7,8,9,10];
+    let x = a.concat(b);
+  x.sort(function (a,b) {
+    return a - b;
+  });
+  var len = x.length;
+  
+  console.log (len%2 === 0 ? (x[Math.floor(len/2)-1] + x[Math.ceil(len/2)])/2 : x[Math.floor(len/2)]);
+})
+
+()
+    </script>
+</body>
+</html>
